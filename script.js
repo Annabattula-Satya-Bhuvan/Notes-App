@@ -1,16 +1,13 @@
 const noteInput = document.getElementById("noteInput");
 const notesDiv = document.getElementById("notes");
-const searchInput = document.getElementById("search");
 const addBtn = document.getElementById("addBtn");
 
 let notes = loadNotes();
 
-function renderNotes(filter = "") {
+function renderNotes() {
   notesDiv.innerHTML = "";
 
   notes.forEach((note, index) => {
-    if (!note.toLowerCase().includes(filter.toLowerCase())) return;
-
     const noteDiv = document.createElement("div");
     noteDiv.className = "note";
 
@@ -24,7 +21,7 @@ function renderNotes(filter = "") {
     delBtn.onclick = () => {
       notes.splice(index, 1);
       saveNotes(notes);
-      renderNotes(searchInput.value);
+      renderNotes();
     };
 
     noteDiv.appendChild(text);
@@ -40,11 +37,7 @@ addBtn.onclick = () => {
   notes.push(value);
   saveNotes(notes);
   noteInput.value = "";
-  renderNotes(searchInput.value);
+  renderNotes();
 };
-
-searchInput.addEventListener("input", () => {
-  renderNotes(searchInput.value);
-});
 
 renderNotes();
