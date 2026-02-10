@@ -1,20 +1,146 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND WITH SOFT LIGHTS */
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #e5e7eb;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(34,211,238,0.20), transparent 45%),
+    linear-gradient(180deg, #020617, #020617);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GLASS CARD */
+.app {
+  width: 420px;
+  padding: 26px;
+  border-radius: 22px;
+
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(59,130,246,0.25);
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+/* TITLE WITH BLUE GRADIENT */
+h1 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 1.8rem;
+  font-weight: 600;
+
+  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* INPUT + TEXTAREA (GLASS FEEL) */
+textarea {
+  width: 100%;
+  height: 90px;
+  resize: none;
+}
+
+input,
+textarea {
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+
+  background: rgba(2, 6, 23, 0.75);
+  border: 1px solid rgba(59,130,246,0.25);
+  color: #e5e7eb;
+
+  outline: none;
+  transition: 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+}
+
+/* PRIMARY BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+
+  background: linear-gradient(135deg, #3b82f6, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 12px 28px rgba(59,130,246,0.4);
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(59,130,246,0.55);
+}
+
+/* NOTES LIST */
+#notes {
+  margin-top: 20px;
+}
+
+/* SINGLE NOTE (GLASS ITEM) */
 .note {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid rgba(59,130,246,0.18);
+
+  transition: 0.2s ease;
+}
+
+.note:hover {
+  background: rgba(2, 6, 23, 0.85);
+  box-shadow: 0 0 0 1px rgba(34,211,238,0.35);
 }
 
 .note span {
   flex: 1;
 }
 
+/* DELETE BUTTON (MINIMAL & CLEAN) */
 .delete-btn {
   background: none;
   border: none;
   color: #22d3ee;
-  cursor: pointer;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
