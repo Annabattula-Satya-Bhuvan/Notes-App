@@ -1,13 +1,12 @@
-# # ✨ Glass Notes App
+# ✨ Glass Notes App
 
-A modern notes application with a black & blue glassmorphic UI.
+A modern notes app with a black & blue glassmorphic UI.
 
 ## Features
 - Add notes
-- Delete notes by clicking
-- Search notes
-- Data saved in localStorage
-- Glassmorphism + gradient lighting UI
+- Delete notes
+- Persistent storage using localStorage
+- Glassmorphism with gradient lighting
 
 ## Tech Stack
 - HTML
